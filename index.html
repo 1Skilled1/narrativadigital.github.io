@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/mountains_behind.png">
+    <title>Principal</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">TICS</a>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="documental/personas/index.html">About</a></li>
+            <li><a href="contacto/index.html">Contact</a></li>
+            <li><a href="https://www.univalle.edu.co/">Univalle</a></li>
+        </ul>
+    </header>
+    <div>
+         <audio autoplay>
+            <source src="audiopro.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <script>
+        const playSound = function() {
+            let element = document.createElement('a');
+            element.setAttribute('style', 'display: none');
+            element.innerHTML = `
+            <div>
+              <audio autoplay>
+                <source src="audiopro.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            `;
+            document.body.appendChild(element);
+            document.removeEventListener('click', playSound);
+        }
+        
+        document.addEventListener('click', playSound);
+    </script>
+    <section>
+        <img src="images/stars.png" id="stars">
+        <img src="images/moon.png" id="moon">
+        <img src="images/mountains_behind.png" id="mountains_behind">
+        <h2 id="texto">Moon Light</h2>
+        <a href="mapa/index.html" target="_blank" id="btn">Mapa Parlante</a>
+        <img src="images/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec">
+        <h2>Narrativa Digital</h2>
+        <br>
+        <p>
+            Brandon Stiven Jimenez<br><br>
+            Juan Esteban Rivera Patiño<br><br>
+            Maryori Molano Alvarez<br><br>
+            Angelica Rengifo Cardenas
+            <br><br><br>
+            La narrativa digital es una herramienta hecha para contar historias a traves de un espacio multimedial.<br> Lo que nosotros queremos hacer con nuestra historia es denunciar parte de nuestras vivencias en nuestras comunas<br>
+            como lo son los daños en las vias, la violencia e inseguridad y la contaminacion
+        </p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let texto = document.getElementById('texto');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            texto.style.marginRight = value * 4 + 'px';
+            texto.style.marginTop = value * 1.2 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>

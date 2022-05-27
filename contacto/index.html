@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://codepen.io/juliangarnier/pen/REyzrR/75efae7724dbc3c055e918057fc4aca5.css'>
+</head>
+<body>
+    <div class="animation-wrapper">
+        <div class="feature-animation">
+          <div class="easing-visualizer">
+            <div class="wrapper bars-wrapper"></div>
+            <div class="wrapper dots-wrapper"></div>
+          </div>
+        </div>
+      </div>
+      <!-- partial -->
+        <script src='https://codepen.io/juliangarnier/pen/REyzrR/75efae7724dbc3c055e918057fc4aca5.js'></script><script  src="./script.js"></script>
+    <div class="content" style="z-index: 1; position: absolute;">
+        <h1 class="logo">Contact <span>Me</span>--<a href="../index.html">Inicio</a></h1>
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form let">
+                <h3>Contact me</h3>
+                <form action="create.php" method="post">
+                    <p>
+                        <label for="Nombres" class="form-label">Names</label>
+                        <input id="Nombres" type="text" name="fullname" class="form-control" required="true"> 
+                    </p>
+                    <p>
+                        <label for="Apellidos" class="form-label">Surnames</label>
+                        <input id="Apellidos "type="text" name="affair" class="form-control" required="true">
+                    </p>
+                    <p>
+                        <label for="Correo" class="form-label">Email Adress</label>
+                        <input id="Correo" type="email" name="email" class="form-control" required="true">
+                    </p>
+                    <p>
+                        <label for="Telefono" class="form-label">Phone Number</label>
+                        <input id="Telefono" type="tel" name="phone" class="form-control" required="true">
+                    </p>
+                    <p class="block">
+                       <label for="Mensaje" class="form-label">Message</label> 
+                        <textarea id="Mensaje" name="message" rows="3"></textarea>
+                    </p>
+                    <p class="block">
+                        <button type="submit">Send</button>
+                    </p>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4>More Info</h4>
+                <ul>
+                    <li><a class="fas fa-map-marker-alt" href="https://goo.gl/maps/EcxBXDLBigEMUhZz7">&nbsp;&nbsp;Cali-Valle Del Cauca</li></a>
+                    <li><a class="fas fa-envelope-open-text" href="">&nbsp;&nbsp;contact@website.com</li></a>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero provident ipsam necessitatibus repellendus?</p>
+                <p>Company.com</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

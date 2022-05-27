@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'><link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="../images/log.png">
+    <title>Imagenes-Juan</title>
+</head>
+<body>
+    <div class="container">
+        <div class="player">
+          <div class="player__controls">
+            <div class="player__btn player__btn--small" id="previous">
+              <i class="fas fa-arrow-left"></i>
+            </div>
+            <h5 class="player__title">playing now</h5>
+            <div class="player__btn player__btn--small" id="icon-menu">
+              <i class="fas fa-bars"></i>
+            </div>
+          </div>
+          <div class="player__album">
+            <a href="imagen1.jpg" target="_blank"><img style="cursor: pointer; height: 135px" src="imagen1.jpg" alt="Album Cover" class="player__img" loading="lazy" /></a>
+          </div>
+     
+          <h2 class="player__artist">Disclosure</h2>
+           <h3 class="player__song"><a class="god" onclick="toggleVideo();">Imagenes</a>
+     
+          <input type="range" value="0" min="1" class="player__level" id="range" />
+          <div class="audio-duration">
+            <div class="start">00:01</div>
+            <div class="end">01:11</div>
+          </div>
+     
+          <audio class="player__audio" controls id="audio">
+            <source src="Juan.ogg" type="audio/ogg" />
+          </audio>
+     
+          <div class="player__controls">
+            <div class="player__btn player__btn--medium" id="backward">
+              <i class="fas fa-backward"></i>
+            </div>
+     
+            <div class="player__btn player__btn--medium blue play" id="play">
+              <i class="fas fa-play play-btn"></i>
+              <i class="fas fa-pause pause-btn hide"></i>
+            </div>
+     
+            <div class="player__btn player__btn--medium" id="forward">
+              <i class="fas fa-forward"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+     <!-- partial -->
+       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.1/jquery.jcarousel.min.js'></script><script  src="./script.js"></script>
+    
+     <h2 class="carrusel">Carrusel Imagenes</h2>
+    <div class="content-all">
+        <div class="content-carrusel">
+            <figure><img src="../img-Juan/1.jpg" onclick="alert('Hola Primera Imagen')"></figure>
+            <figure><img src="../img-Juan/2.jpg" onclick="alert('Hola Segunda Imagen')"></figure>
+            <figure><img src="../img-Juan/3.jpg" onclick="alert('Hola Tercera Imagen')"></figure>
+            <figure><a href="../documental/index.html" target="_blank"><img src="../img-Juan/4.jpg"></a></figure>
+            <figure><img src="../img-Juan/5.jpg" onclick="alert('Hola Cuarta Imagen')"></figure>
+            <figure><img src="../img-Juan/6.jpg" onclick="alert('Hola Quinta Imagen')"></figure>
+            <figure><img src="../img-Juan/7.jpg" onclick="alert('Hola Sexta Imagen')"></figure>
+            <figure><img src="../img-Juan/8.jpg" onclick="alert('Hola Septima Imagen')"></figure>
+        </div>
+      </div>
+      
+        <div class="trailer">
+          <div class="container">
+            <img src="close.png" class="close" onclick="toggleVideo();">
+        <div class="mySlides">
+            <img src="imagenes/1.jpg" alt="imagen-1">
+        </div>
+        <div class="mySlides">
+            <img src="imagenes/2.jpg" alt="">
+        </div>
+        <div class="mySlides">
+            <img src="imagenes/3.jpg" alt="">
+        </div>
+        <div class="mySlides">
+          <img src="imagenes/4.jpg" alt="imagen-1">
+      </div>
+      <div class="mySlides">
+          <img src="imagenes/5.jpg" alt="">
+      </div>
+      <div class="mySlides">
+          <img src="imagenes/6.jpg" alt="">
+      </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+          <div class="elements">
+              <span class="quadrate" onclick="currentSlide(1)"></span>
+              <span class="quadrate" onclick="currentSlide(2)"></span>
+              <span class="quadrate" onclick="currentSlide(3)"></span>
+              <span class="quadrate" onclick="currentSlide(4)"></span>
+              <span class="quadrate" onclick="currentSlide(5)"></span>
+              <span class="quadrate" onclick="currentSlide(6)"></span>
+          </div>
+          </div>
+    </div>
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex)
+    
+    function plusSlides(n){
+    showSlides(slideIndex += n)
+    }
+    function currentSlide(n){
+    showSlides(slideIndex = n)
+    }
+    function showSlides(n){
+    let i;
+    let slides = document.querySelectorAll(".mySlides");
+    let quadrates = document.querySelectorAll(".quadrate"); 
+    if(n > slides.length) slideIndex = 1
+    if(n < 1) slideIndex = slides.length
+    for(i = 0; i < slides.length; i++){
+    slides[i].style.display = "none"
+    }
+    for(i = 0; i < quadrates.length;i++){
+    quadrates[i].className = quadrates[i].className.replace("active","")
+    }
+    slides[slideIndex-1].style.display = "block";
+    quadrates[slideIndex-1].className += " active";
+    }
+    function toggleVideo(){
+    const trailer = document.querySelector('.trailer');
+    const video = document.querySelector('video');
+    trailer.classList.toggle('active')
+    video.currentTime = 0;
+    video.pause();
+    }
+    </script>
+    </div>
+</body>
+</html>
